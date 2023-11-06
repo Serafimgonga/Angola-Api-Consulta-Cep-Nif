@@ -72,7 +72,7 @@ app.get("/api/nif/:id", async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .json({ error: "Erro ao fazer a requisição para o servidor externo." });
+      .json({ error: "Erro ao fazer a requisição para o servidor externo."});
   }
 });
 
