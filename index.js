@@ -86,19 +86,6 @@ app.get("/angola/api/bi/:id", async (req, res) => {
     obj.data.emissao_local = response2.data.data.emissao_local;
 
 
-   /* console.log(response1.data);
-    console.log(response2.data);*/
-
-    console.log(obj);
-
-/*
-    const objetoCombinado = Object.assign(
-      {},
-      response2.data,
-      response1.data.data
-    );*/
-
-    // console.log('Dados objetoCombinado:',objetoCombinado);
 
     res.status(200).json(obj);
   } catch (error) {
@@ -111,15 +98,12 @@ app.get("/angola/api/bi/:id", async (req, res) => {
 app.get("/angola/api/nif/:id", async (req, res) => {
   const id = req.params.id;
 
-  await axios
-    .get(process.env.URL_NIF + "=" + id)
-    .then((response) => {
+  await axios.get(process.env.URL_NIF + "=" + id).then((response) => {
+
       res.status(200).json(response.data);
-    })
-    .catch((err) => {
-      res
-        .status(500)
-        .json({ error: "Erro ao fazer a requisição para o servidor externo." });
+
+    }).catch((err) => {
+      res.status(500).json({ error: "Erro ao fazer a requisição para o servidor externo." });
     });
 });
 
