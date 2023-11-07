@@ -102,7 +102,7 @@ app.get("/angola/api/nif/:id", async (req, res) => {
     .catch((err) => {
       res
         .status(500)
-        .json({ error: "Erro ao fazer a requisição para o servidor externo." });
+        .json({ error:"Erro ao fazer a requisição para o servidor externo." });
     });
 });
 
