@@ -45,7 +45,7 @@ const obj = {
   }
 };
 
-// Rota para fazer a requisição para o servidor externo e retornar a resposta
+/*Rota Complexas*/
 
 app.get("/angola/api/bi/:id", async (req, res) => {
   try {
@@ -95,10 +95,27 @@ app.get("/angola/api/bi/:id", async (req, res) => {
   }
 });
 
+/*Rota para Validar Numero de Nif*/
+
 app.get("/angola/api/nif/:id", async (req, res) => {
   const id = req.params.id;
 
   await axios.get(process.env.URL_NIF + "=" + id).then((response) => {
+
+      res.status(200).json(response.data);
+
+    }).catch((err) => {
+      res.status(500).json({ error: "Erro ao fazer a requisição para o servidor externo." });
+    });
+});
+
+
+/* Rota simples */
+
+app.get("/:id", async (req, res) => {
+  const id = req.params.id;
+
+  await axios.get(process.env.URL_BI1 + "=" + id).then((response) => {
 
       res.status(200).json(response.data);
 
