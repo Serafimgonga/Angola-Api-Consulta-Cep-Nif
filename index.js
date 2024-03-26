@@ -12,6 +12,8 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Athor", "Serafim Gonga");
+  res.setHeader("Email", "serafimag2020@gmail.com");
   next();
 });
 
@@ -22,32 +24,32 @@ const obj = {
   code:null,
   message:"",
   data:{
-  ID_NUMBER: "",
-  EXPIRATION_DATE: "",
-  CONTACT_MOBILE: "",
-  PERSON_ID: "",
-  APPLICATION_ID: "",
-  ADDRESS: "",
-  PHOTO: "",
-  LAST_NAME: "",
-  FIRST_NAME: "",
+  id_number: "",
+  nif: "",
+  person_id: "",
+  application_id: "",
   numero: "",
   nome: "",
-  nif: "",
-  data_nasc: "",
+  first_name: "",
+  last_name: "",
   genero: "",
+  data_nasc: "",
+  estado_civil: "",
   naturalidade: "",
+  address: "",
+  contact_mobile: "",
   pai_nome_completo: "",
   mae_nome_completo: "",
-  estado_civil: "",
-  data_emissao: "",
   emissao_local: "",
+  data_emissao: "",
+  expiration_date: "",
+  photo: "",
   }
 };
 
 /*Rota Complexas*/
 
-app.get("/angola/api/bi/:id", async (req, res) => {
+app.get("/bi/:id", async (req, res) => {
   try {
     const id = req.params.id;
 
@@ -60,15 +62,15 @@ app.get("/angola/api/bi/:id", async (req, res) => {
 
     obj.code=response1.data.code;
 
-    obj.data.ID_NUMBER = response1.data.data.ID_NUMBER;
-    obj.data.EXPIRATION_DATE = response1.data.data.EXPIRATION_DATE;
-    obj.data.CONTACT_MOBILE = response1.data.data.CONTACT_MOBILE;
-    obj.data.PERSON_ID = response1.data.data.PERSON_ID;
-    obj.data.APPLICATION_ID = response1.data.data.APPLICATION_ID;
-    obj.data.ADDRESS = response1.data.data.ADDRESS;
-    obj.data.PHOTO = response1.data.data.PHOTO;
-    obj.data.LAST_NAME = response1.data.data.LAST_NAME;
-    obj.data.FIRST_NAME = response1.data.data.FIRST_NAME;
+    obj.data.id_number = response1.data.data.ID_NUMBER;
+    obj.data.expiration_date = response1.data.data.EXPIRATION_DATE;
+    obj.data.contact_mobile = response1.data.data.CONTACT_MOBILE;
+    obj.data.person_id = response1.data.data.PERSON_ID;
+    obj.data.application_id = response1.data.data.APPLICATION_ID;
+    obj.data.address = response1.data.data.ADDRESS;
+    obj.data.photo = response1.data.data.PHOTO;
+    obj.data.last_name = response1.data.data.LAST_NAME;
+    obj.data.first_name = response1.data.data.FIRST_NAME;
 
     obj.sucess=response2.data.sucess;
     obj.message=response2.data.message;
@@ -97,7 +99,7 @@ app.get("/angola/api/bi/:id", async (req, res) => {
 
 /*Rota para Validar Numero de Nif*/
 
-app.get("/angola/api/nif/:id", async (req, res) => {
+app.get("/nif/:id", async (req, res) => {
   const id = req.params.id;
 
   await axios.get(process.env.URL_NIF + "=" + id).then((response) => {
@@ -111,7 +113,6 @@ app.get("/angola/api/nif/:id", async (req, res) => {
 
 
 /* Rota simples */
-
 app.get("/:id", async (req, res) => {
   const id = req.params.id;
 
