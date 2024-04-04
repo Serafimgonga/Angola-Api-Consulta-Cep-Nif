@@ -9,7 +9,7 @@ A DikambaApi é uma API RESTful que permite aos usuários recuperar informaçõe
 
 ## Instalação
 
-1. Clone o repositório: `git clone git@github.com:Serafimgonga/Angola-Api-Consulta-Cep-Nif.git`
+1. Clone o repositório: `git clone https://github.com/Serafimgonga/Angola-Api-Consulta-Cep-Nif.git`
 2. Entre no diretório do projeto: `cd seu-projeto`
 3. Instale as dependências: `npm install`
 
