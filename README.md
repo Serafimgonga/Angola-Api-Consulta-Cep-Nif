@@ -53,7 +53,7 @@ As informações estão sendo armazenadas estaticamente, em breve poderei implem
   "password": "sua-senha"
 }
 
-Você pode usar esta credencial para um usuário com função de convidado, este usuário só poderá acessar esta rota `/nif/:id`
+Você pode usar esta Credenciais para um usuário com função de convidado, este usuário só poderá acessar esta rota `/nif/:id`
 , caso queira acessar outras rotas, entre em contato com o criador,
 {
   "username": "convidado",
@@ -156,7 +156,7 @@ Por favor, certifique-se de seguir com as diretrizes de código e estilo. Antes 
 - Implementar banco de dados usando MongoDB
 - Melhorar a documentação sobre como configurar o projeto
 
-Se você gostaria de trabalhar em uma dessas tarefas ou tem outras ideias de como contribuir, sinta-se à vontade para entrar em contato conosco ou enviar um pull request.
+Se você gostaria de trabalhar em uma dessas tarefas ou tem outras ideias de como contribuir, sinta-se à vontade para entrar em contato como o criador ou enviar um pull request.
 
 
 ### Entre em Contato
