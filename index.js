@@ -18,20 +18,19 @@ const host = "0.0.0.0"; // 8080 é um valor padrão caso a variável de ambiente
 
 // Permite todas as origens, cabeçalhos e métodos
 //app.use(cors());
-app.use(cors({
+/*app.use(cors({
   //origin: 'http://meusite.com', // Especifique a origem permitida
   origin: '*',
   methods: ['GET', 'POST'], // Especifique os métodos permitidos
   allowedHeaders: ['Content-Type', 'Authorization'], // Especifique os cabeçalhos permitidos
-}));
+}));*/
 
-/*
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Permite todas as origens
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Métodos permitidos
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Cabeçalhos permitidos
   next();
-});*/
+});
 
 // Rotas para autenticação
 app.post("/login", authController.login);
