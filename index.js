@@ -17,7 +17,13 @@ const host = "0.0.0.0"; // 8080 é um valor padrão caso a variável de ambiente
 // Configurar middleware para permitir solicitações CORS
 
 // Permite todas as origens, cabeçalhos e métodos
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+  //origin: 'http://meusite.com', // Especifique a origem permitida
+  origin: '*',
+  methods: ['GET', 'POST'], // Especifique os métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization'], // Especifique os cabeçalhos permitidos
+}));
 
 /*
 app.use((req, res, next) => {
