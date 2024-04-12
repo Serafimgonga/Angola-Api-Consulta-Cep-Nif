@@ -5,7 +5,7 @@ const authController = require("./controllers/authController");
 const biRoutes = require("./routes/biRoutes");
 const nifRoutes = require("./routes/nifRoutes");
 const bidefaultRoutes = require("./routes/bidefaultRoutes");
-
+const cors =require("cors");
 const app = express();
 app.use(bodyParser.json());
 
@@ -15,12 +15,17 @@ const porta = process.env.PORT || 8080; // 8080 é um valor padrão caso a vari�
 const host = "0.0.0.0"; // 8080 é um valor padrão caso a variável de ambiente não seja definida
 
 // Configurar middleware para permitir solicitações CORS
+
+// Permite todas as origens, cabeçalhos e métodos
+app.use(cors());
+
+/*
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
-});
+});*/
 
 // Rotas para autenticação
 app.post("/login", authController.login);
