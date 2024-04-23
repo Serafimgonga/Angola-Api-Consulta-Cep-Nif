@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const users = require("../config/users");
+const saltRounds = 10; // Número de rounds para gerar o salt
 
 const secretKey = process.env.SECRET_KEY;
 
