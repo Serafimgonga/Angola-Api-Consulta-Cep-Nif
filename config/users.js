@@ -18,7 +18,7 @@ const users = [
       id: 3,
       username: "admin",
       password: process.env.PASSWORD2,
-      role: "convidado",
+      role: "admin",
     },
     
   ];
